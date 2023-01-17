@@ -3,18 +3,22 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>tt.zgx</groupId>
     <artifactId>poxiao</artifactId>
     <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
-        <module>poxiao-api</module>
-        <module>poxiao-business</module>
+        <module>poxiao-web</module>
+        <module>poxiao-service</module>
+        <module>poxiao-dao</module>
+        <module>poxiao-common</module>
     </modules>
 
     <properties>
         <spring-boot-version>2.1.3.RELEASE</spring-boot-version>
+        <mybatis-plus-version>3.4.2</mybatis-plus-version>
+        <mysql-driver-version>8.0.27</mysql-driver-version>
+        <lombok-version>1.18.14</lombok-version>
     </properties>
 
     <dependencyManagement>
@@ -24,8 +28,49 @@
                 <artifactId>spring-boot-starter-web</artifactId>
                 <version>${spring-boot-version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-driver-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok-version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
+<!--    <repositories>-->
+<!--        <repository>-->
+<!--            <id>central</id>-->
+<!--            <url>http://host:port/content/groups/public</url>-->
+<!--        </repository>-->
+<!--    </repositories>-->
 
+<!--    <pluginRepositories>-->
+<!--        <pluginRepository>-->
+<!--            <id>central</id>-->
+<!--            <url>http://host:port/content/groups/public</url>-->
+<!--        </pluginRepository>-->
+<!--    </pluginRepositories>-->
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
