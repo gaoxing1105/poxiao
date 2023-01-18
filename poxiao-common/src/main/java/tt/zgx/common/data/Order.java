@@ -16,4 +16,7 @@ public class Order {
     private String orderStatus;
     private LocalDateTime createTime;
 
+    private void test(){
+
+    }
 }
