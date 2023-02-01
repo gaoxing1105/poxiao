@@ -11,7 +11,7 @@ public class MonitorService {
 
 
     public String hello(){
-        String result = "hello"+ LocalDateTime.now().toString();
+        String result = "hello "+ LocalDateTime.now().toString();
         System.out.println(result);
         return result;
     }
